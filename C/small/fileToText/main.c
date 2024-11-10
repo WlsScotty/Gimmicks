@@ -1,12 +1,14 @@
-
+#include <fcntl.h> // Used for future memory manipulation
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <X11/Xlib.h>   //Ignore my poor library selection, this is just supposed to be a simple fun little utility
 #include <X11/Xutil.h>
 #include <X11/Xatom.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <fcntl.h> // Used for future memory manipulation
-#include <sys/types.h>
-#include <sys/stat.h>
+
+#define true 1
 
 const char* procName = "/home/scottywilson/example.txt";
 int sleepTime = 30; // Time between each individual input
@@ -63,6 +65,6 @@ int main(int argc, char *argv[]){
     XCloseDisplay(display);
 
     free(bytes);
-    
+
   return 0;
 }
