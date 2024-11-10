@@ -3,6 +3,7 @@
 #include <X11/Xutil.h>
 #include <X11/Xatom.h>
 #include <unistd.h>
+#include <stdio.h>
 #include <fcntl.h> // Used for future memory manipulation
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -61,5 +62,7 @@ int main(int argc, char *argv[]){
     XFlush(display);
     XCloseDisplay(display);
 
+    free(bytes);
+    
   return 0;
 }
